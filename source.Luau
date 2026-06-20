@@ -881,6 +881,7 @@ end
     end
 end
 
+end
 
 function sec:Keybind(opts, callback)
     opts = opts or {}
