@@ -608,6 +608,7 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     tp(main, UDim2.new(0.5, 0, 0.5, 0), 1)
 
     window = {}
+    window.ContextMenu = ContextMenu
 
     function window:Section(opts)
     opts = typeof(opts) == "table" and opts or { Text = opts }
@@ -3250,8 +3251,9 @@ function window:ContextMenu(options)
     end)
 end
 
-window.ContextMenu = ContextMenu
+return window   -- return the window API
+end             -- closes lib:init()
 
-return lib = {}
+return lib      -- return the library module
 
 
