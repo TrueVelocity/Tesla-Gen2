@@ -1,3 +1,4 @@
+library = {}
 -- LUCIDE ICONS
 local Lucide = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mabil-YT/New-Apple-Library/refs/heads/main/icons.lua"))()
 
