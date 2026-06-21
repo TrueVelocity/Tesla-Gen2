@@ -1833,5 +1833,4 @@ end
 -- Library Fully Loaded
 ------------------------------------------------------------
 print("[AppleUI-Gen3] Library successfully initialized.")
-
 return library
