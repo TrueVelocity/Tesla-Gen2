@@ -1,4 +1,9 @@
 # poUI >|< Best UI library
+
+## How to use
+You can execute our example script
+
+
 <details>
 <summary>Q & A</summary>
 
@@ -19,5 +24,3 @@ well... i don't really know.
 
 </details>
 </details>
-
-lol
