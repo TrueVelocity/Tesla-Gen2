@@ -1770,33 +1770,6 @@ local Library do
                 CornerRadius = UDimNew(0, 3)
             }) 
 
-            Items["Avatar"] = Instances:Create("ImageLabel", {
-                Parent = Items["Sidebar"].Instance,
-                ScaleType = Enum.ScaleType.Fit,
-                BorderColor3 = FromRGB(0, 0, 0),
-                Name = "\0",
-                Size = UDim2New(0, 34, 0, 34),
-                AnchorPoint = Vector2New(0.5, 1),
-                Image = "rbxasset://textures/ui/GuiImagePlaceholder.png",
-                BackgroundTransparency = 1,
-                Position = UDim2New(0.5, 0, 1, -4),
-                ZIndex = 2,
-                BorderSizePixel = 0,
-                BackgroundColor3 = FromRGB(255, 255, 255)
-            }) 
-
-            Items["Avatar"].Instance.Image = Players:GetUserThumbnailAsync(Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
-
-            Instances:Create("UICorner", {
-                Parent = Items["Avatar"].Instance,
-                CornerRadius = UDimNew(1, 0)
-            }) 
-
-            Instances:Create("UIStroke", {
-                Parent = Items["Avatar"].Instance,
-                Color = FromRGB(24, 24, 24),
-                ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-            }):AddToTheme({Color = "Border"})
 
             Items["Inline"] = Instances:Create("Frame", {
                 Parent = Items["MainFrame"].Instance,
