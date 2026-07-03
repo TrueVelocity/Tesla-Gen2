@@ -1,6 +1,6 @@
--- original made by samet 
+-- made by samet 
 -- retarded niggers
--- his ds: https://discord.gg/VhvTd5HV8d
+-- https://discord.gg/VhvTd5HV8d
 
 if getgenv().Library then 
     getgenv().Library:Unload()
@@ -1779,7 +1779,7 @@ local Library do
                 AnchorPoint = Vector2New(0.5, 1),
                 Image = "rbxasset://textures/ui/GuiImagePlaceholder.png",
                 BackgroundTransparency = 1,
-                Position = UDim2New(0.5, 0, 1, -18),
+                Position = UDim2New(0.5, 0, 1, -4),
                 ZIndex = 2,
                 BorderSizePixel = 0,
                 BackgroundColor3 = FromRGB(255, 255, 255)
@@ -1803,7 +1803,7 @@ local Library do
                 BorderColor3 = FromRGB(0, 0, 0),
                 Name = "\0",
                 BackgroundTransparency = 1,
-                Position = UDim2New(0, 0, 71, 0),
+                Position = UDim2New(0, 71, 0, 0),
                 Size = UDim2New(1, -71, 1, 0),
                 ZIndex = 2,
                 ClipsDescendants = true,
