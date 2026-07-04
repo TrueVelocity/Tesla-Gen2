@@ -5,28 +5,6 @@ You can execute our [example script](https://raw.githubusercontent.com/TrueVeloc
 ### or..
 you can just scroll down to the elements with their instructions.
 
-
-<details>
-<summary>Q & A</summary>
-
-## Read some Q & A.
-
-
-<details>
-<summary>Is it free?</summary>
-  
-YES, ITS FREE!
-
-</details>
-
-<details>
-<summary>Why does it exist?</summary>
-
-well... i don't really know.
-
-</details>
-</details>
-
 ## Instructions/ Booting the library
 ### Booting the library
 make a new lua(u) file in VS code or in your executor.
@@ -404,3 +382,28 @@ do
     end
 end
 ```
+
+# Q & A
+<details>
+<summary>Open Q & A</summary>
+
+<p><strong>Close Q & A</strong> (scroll up to collapse)</p>
+
+<details>
+<summary>Is it free?</summary>
+YES, ITS FREE!
+</details>
+
+<details>
+<summary>Why does it exist?</summary>
+<p><strong>well...</strong> i don't really know.</p>
+</details>
+
+<details>
+  <summary>Am i able to remake this library</summary>
+  <p>As an old company once said,<i> For exploiters, <b> by exploiters</b></i></p>
+</details>
+
+</details>
+
+<p align="center"><b>Thank you for reading.</b></p>
