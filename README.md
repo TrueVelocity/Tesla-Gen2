@@ -1,4 +1,4 @@
-# poUI >|< Best UI library
+# Tesla / UI library
 
 ## How to use
 You can execute our [example script](https://raw.githubusercontent.com/TrueVelocity/Tesla-Gen2/refs/heads/main/example.luau).
