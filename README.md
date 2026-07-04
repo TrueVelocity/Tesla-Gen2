@@ -74,6 +74,6 @@ Subpages
         local AimbotSubpage = Pages["One"]:SubPage({Name = "Aimbot"})
         local SilentSubpage = Pages["One"]:SubPage({Name = "Silent"})
 ```
-add "**do**" for every page you want to edit and dont forget to add the Subpages! or it would crash.
+add ```do``` for every page you want to edit and dont forget to add the Subpages! or it would crash.
 
 ## Instructions/ Elements
