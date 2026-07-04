@@ -77,3 +77,111 @@ Subpages
 add ```do``` for every page you want to edit and dont forget to add the Subpages! or it would crash.
 
 ## Instructions/ Elements
+### Sections
+
+Sections are the containers inside your SubPages.They split your UI into Left and Right columns.
+```luau
+local AimbotSection = AimbotSubpage:Section({
+    Name = "Aimbot",
+    Side = "Left" -- or "Right"
+})
+```
+### Toggle
+
+A toggle is a simple ON/OFF switch.
+```luau
+local Toggle = AimbotSection:Toggle({
+    Name = "Enable", 
+    Flag = "Enable", 
+    Default = false,
+    Callback = function(Value)
+        print("Toggle:", Value)
+    end
+})
+```
+### Toggle Keybind
+
+Attach a keybind directly to a toggle.
+```luau
+Toggle:Keybind({
+    Name = "Keybind",
+    Flag = "Keybind",
+    Default = Enum.KeyCode.X,
+    Mode = "Toggle", -- Toggle / Hold
+    Callback = function(Value)
+        print("Keybind:", Value)
+    end
+})
+```
+### Toggle Colorpicker
+
+Attach a colorpicker to a toggle.
+```luau
+Toggle:Colorpicker({
+    Name = "Colorpicker", 
+    Flag = "Colorpicker", 
+    Default = Color3.fromRGB(255, 255, 255), 
+    Callback = function(Value, Alpha)
+        print("Color:", Value, "Alpha:", Alpha)
+    end
+})
+```
+### Button
+
+Buttons execute a function when clicked.
+```luau
+AimbotSection:Button({
+    Name = "Button",
+    Callback = function()
+        print("Button pressed")
+    end
+})
+```
+### Button + SubButton
+
+Buttons can have sub-buttons attached.
+```luau
+AimbotSection:Button({
+    Name = "Button",
+    Callback = function()
+        print("Main Button")
+    end
+}):SubButton({
+    Name = "SubButton",
+    Callback = function()
+        print("SubButton pressed")
+    end
+})
+```
+### Slider
+
+Sliders allow numeric input.
+```luau
+AimbotSection:Slider({
+    Name = "Slider", 
+    Flag = "Slider", 
+    Min = 0, 
+    Default = 0, 
+    Max = 100, 
+    Suffix = "%", 
+    Decimals = 1, 
+    Callback = function(Value)
+        print("Slider:", Value)
+    end
+})
+```
+### Dropdown
+
+A single‑select dropdown.
+```luau
+AimbotSection:Dropdown({
+    Name = "Dropdown", 
+    Flag = "Dropdown", 
+    Items = { "One", "Two", "Three", "Four" }, 
+    Multi = false,
+    MaxSize = 50,
+    Callback = function(Value)
+        print("Dropdown:", Value)
+    end
+})
+```
