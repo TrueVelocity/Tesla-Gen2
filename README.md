@@ -1,7 +1,11 @@
 # Tesla / UI library
+i want one of those UI library finders to add my library into their UI libraries folder, so people could find my UI everywhere.
+
+[![Eazvy/UILibs](https://img.shields.io/badge/Eazvy-UI%20Libs-green?style=for-the-badge&logo=github)](https://github.com/Eazvy/UILibs/tree/main/Librarys) [![Xyraniz/UI-Libs](https://img.shields.io/badge/Xyraniz-UI%20Libs-blue?style=for-the-badge&logo=github)](https://github.com/Eazvy/UILibs/tree/main/Librarys]) [![GhostDuckyy/UI-Libraries](https://img.shields.io/badge/GhostDuckyy-UI%20Libs-yellow?style=for-the-badge&logo=github)](https://github.com/Eazvy/UILibs/tree/main/Librarys](https://github.com/GhostDuckyy/UI-Libraries))
+
 
 ## How to use
-You can execute our [example script](https://raw.githubusercontent.com/TrueVelocity/Tesla-Gen2/refs/heads/main/example.luau).
+you can execute our [example script](https://raw.githubusercontent.com/TrueVelocity/Tesla-Gen2/refs/heads/main/example.luau).
 ### or..
 you can just scroll down to the elements with their instructions.
 
@@ -407,3 +411,4 @@ YES, ITS FREE!
 </details>
 
 <p align="center"><b>Thank you for reading.</b></p>
+
