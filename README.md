@@ -249,7 +249,7 @@ AimbotSection:Textbox({
 ## Theming System
 
 Our library supports dynamic theming.
-```
+```luau
 for Index, Value in Library.Theme do
     ThemingSection:Label(Index, "Left"):Colorpicker({
         Name = Index,
