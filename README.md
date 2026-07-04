@@ -185,3 +185,172 @@ AimbotSection:Dropdown({
     end
 })
 ```
+
+### Multi Dropdown
+
+A multi‑select dropdown.
+```luau
+AimbotSection:Dropdown({
+    Name = "Multi Dropdown", 
+    Flag = "Multi Dropdown", 
+    Items = { "One", "Two", "Three", "Four" }, 
+    Multi = true,
+    MaxSize = 75,
+    Callback = function(Value)
+        print("Multi Dropdown:", Value)
+    end
+})
+```
+### Label
+
+Labels are text elements inside sections.
+```luau
+local ColorpickerLabel = AimbotSection:Label("Colorpicker", "Left")
+```
+Labels can also have colorpickers:
+```luau
+ColorpickerLabel:Colorpicker({ 
+    Name = "Colorpicker", 
+    Flag = "Colorpicker", 
+    Default = Color3.fromRGB(255, 255, 255), 
+    Callback = function(Value, Alpha)
+        print(Value, Alpha)
+    end
+})
+```
+### Keybind (Standalone)
+
+A standalone keybind (not attached to a toggle).
+```luau
+AimbotSection:Keybind({
+    Name = "Keybind",
+    Flag = "Keybind",
+    Default = Enum.KeyCode.C,
+    Mode = "Toggle",
+    Callback = function(Value)
+        print("Keybind:", Value)
+    end
+})
+```
+### Textbox
+
+Textboxes allow text input.
+```luau
+AimbotSection:Textbox({
+    Name = "Textbox",
+    Flag = "Textbox",
+    Placeholder = "Placeholder",
+    Default = "Input",
+    Callback = function(Value)
+        print("Textbox:", Value)
+    end
+})
+```
+## Theming System
+
+Our library supports dynamic theming.
+```
+for Index, Value in Library.Theme do
+    ThemingSection:Label(Index, "Left"):Colorpicker({
+        Name = Index,
+        Flag = "Theme" .. Index,
+        Default = Value,
+        Callback = function(Value)
+            Library.Theme[Index] = Value
+            Library:ChangeTheme(Index, Value)
+        end
+    })
+end
+```
+## Config System
+
+### Configs Dropdown
+```luau
+local ConfigsDropdown = ConfigsSection:Dropdown({
+    Name = "Configs", 
+    Flag = "ConfigsList", 
+    Items = { }, 
+    Multi = false,
+    MaxSize = 85,
+    Callback = function(Value)
+        ConfigSelected = Value
+    end
+})
+```
+Config Name Textbox
+```luau
+ConfigsSection:Textbox({
+    Name = "Config Name",
+    Default = "",
+    Flag = "ConfigName",
+    Placeholder = "...",
+    Callback = function(Value)
+        ConfigName = Value
+    end
+})
+```
+### Load / Save Config
+```luau
+ConfigsSection:Button({
+    Name = "Load Config",
+    Callback = function()
+        if ConfigSelected then
+            Library:LoadConfig(readfile(Library.Folders.Configs .. "/" .. ConfigSelected))
+
+            Library:Thread(function()
+                task.wait(0.1)
+
+                for Index, Value in Library.Theme do 
+                    Library.Theme[Index] = Library.Flags["Theme"..Index].Color
+                    Library:ChangeTheme(Index, Library.Flags["Theme"..Index].Color)
+                end    
+            end)
+
+            Library:Notification("Success", "Loaded config " .. ConfigSelected, 5)
+        else
+            return
+        end
+    end
+}):SubButton({
+    Name = "Save Config",
+    Callback = function()
+        if ConfigName then
+            Library:SaveConfig(ConfigSelected)
+        else
+            return
+        end
+    end
+})
+```
+
+### Create / Delete Config
+```luau
+ConfigsSection:Button({
+    Name = "Create Config",
+    Callback = function()
+        if not isfile(Library.Folders.Configs .. "/" .. ConfigName .. ".json") then
+            writefile(Library.Folders.Configs .. "/" .. ConfigName .. ".json", Library:GetConfig())
+
+            Library:RefreshConfigsList(ConfigsDropdown)
+        else
+            Library:Notification("Error", "Config already exists", 3)
+            return
+        end
+    end
+}):SubButton({
+    Name = "Delete Config",
+    Callback = function()
+        if ConfigSelected then
+            Library:DeleteConfig(ConfigSelected)
+
+            Library:RefreshConfigsList(ConfigsDropdown)
+        else
+            return
+        end
+    end
+})
+```
+### Refresh Config List
+```luau
+Library:RefreshConfigsList(ConfigsDropdown)
+```
