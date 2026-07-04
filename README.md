@@ -27,7 +27,7 @@ well... i don't really know.
 </details>
 </details>
 
-## instructions
+## Instructions/ Booting the library
 ### Booting the library
 make a new lua(u) file in VS code or in your executor.
 at the top of your file, add this line of code
@@ -48,3 +48,32 @@ do -- Example
     })
   -- DO NOT ADD ANY END HERE, THE FUNCTION IS NOT OVER YET!
 ```
+### Tabs/Pages & Subpages
+now, because you have the window, we need to add two more elements, **Tabs/Pages** & **Subpages**.
+copy this exact function to create **tab**/**Pages**
+``` luau
+    local Pages = {
+        ["One"] = Window:Page({Icon = "109391165290124", Search = true}),
+        ["Two"] = Window:Page({Icon = "72974659157165", Search = false}),
+        ["_"] = Window:Seperator(),
+        ["Three"] = Window:Page({Icon = "109391165290124", Search = true}),
+        ["Four"] = Window:Page({Icon = "129960652808688", Search = true}),
+        ["__"] = Window:Seperator(),
+        ["Five"] = Window:Page({Icon = "112887626955824", Search = true}),
+        ["Six"] = Window:Page({Icon = "72974659157165", Search = false}),
+        ["Seven"] = Window:Page({Icon = "82402610527668", Search = true}),
+        ["Eight"] = Window:Page({Icon = "72974659157165", Search = true}),
+        ["Nine"] = Window:Page({Icon = "82402610527668", Search = true}),
+    }
+```
+you can add as much **Tabs/Pages** as you want.
+
+Subpages
+``` luau
+      do -- EXPLAINING
+        local AimbotSubpage = Pages["One"]:SubPage({Name = "Aimbot"})
+        local SilentSubpage = Pages["One"]:SubPage({Name = "Silent"})
+```
+add "**do**" for every page you want to edit and dont forget to add the Subpages! or it would crash.
+
+## Instructions/ Elements
