@@ -354,3 +354,53 @@ ConfigsSection:Button({
 ```luau
 Library:RefreshConfigsList(ConfigsDropdown)
 ```
+## Notifications
+```luau
+Library:Notification("Notification test", "Test", 5)
+```
+## Threads
+```luau
+Library:Thread(function()
+    print("Running in a thread")
+end)
+```
+## Separators
+```luau
+["_"] = Window:Seperator(),
+["__"] = Window:Seperator(),
+```
+and thats the end.
+# Minimal Example
+```luau
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TrueVelocity/AppleUI-Gen2/refs/heads/main/library.luau"))()
+
+do
+    local Window = Library:Window({
+        Logo = "123748867365417",
+        FadeSpeed = 0.15,
+        PagePadding = 19,
+    })
+
+    local Pages = {
+        ["Main"] = Window:Page({Icon = "109391165290124", Search = true}),
+    }
+
+    do
+        local MainSubpage = Pages["Main"]:SubPage({Name = "Main"})
+
+        local Section = MainSubpage:Section({
+            Name = "Example",
+            Side = "Left"
+        })
+
+        Section:Toggle({
+            Name = "Enable",
+            Flag = "Enable",
+            Default = false,
+            Callback = function(v)
+                print(v)
+            end
+        })
+    end
+end
+```
